@@ -1,0 +1,27 @@
+Cypress doesn't support mouse hover.
+
+There is a method in Jquery to steer mouse hover.
+
+Show() is the method from jquery used to display the hidden elements.
+
+if cypress wants to click an hidden element without click on the mouse hover button, force:true can be sent in click method to do that.
+
+/// <reference types = "Cypress"/>
+
+
+
+describe("Handing childtabs cases", function(){
+
+    it("Webtable", function(){
+
+        //Web Tables
+        cy.visit("https://rahulshettyacademy.com/AutomationPractice/")
+        cy.get('.mouse-hover-content').invoke('show')
+        cy.contains('Top').click()
+        cy.url().should('include', 'top')
+        // to click on invisible element (without click on the mouse hover)
+        cy.contains('Top').click({force:true})
+        
+
+    })
+})
