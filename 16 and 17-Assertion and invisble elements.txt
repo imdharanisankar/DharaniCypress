@@ -1,0 +1,11 @@
+Assertion is being used to verify if something is exsiting or not existing after a step. it is to verify that fact or the expectation of a test.
+
+should('have.length', <value>) assertion is used to validate if expected numbers of results of displaying after the execution.
+
+wait time command will be used for searches where the webpage is not getting loaded or animations are not happening. if the webpage is loading, then cypress will automatically wait for the page to be available.
+
+cy.wait is the syntax and the value shuld be of millisecs cy.wait(1000) - 1 secs
+
+incase of invisible elements, there is a way in JS to retrieve only visible elements.
+
+ cy.get('.product:visible').should('have.length', 4)

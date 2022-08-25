@@ -1,0 +1,18 @@
+/// <reference types = "Cypress"/>
+
+describe("Handing different cases", function(){
+
+    it("handing Static dropdowns", function(){
+        cy.visit("https://rahulshettyacademy.com/AutomationPractice/")
+
+        //To select the value from dropdown
+        // to check if the second option is selected.
+        cy.get('#displayed-text').should('be.visible')
+        cy.get('#hide-textbox').click()
+        cy.get('#displayed-text').should('not.be.visible')
+        cy.get('#show-textbox').click()
+        cy.get('#displayed-text').should('be.visible')
+
+       
+    })
+})

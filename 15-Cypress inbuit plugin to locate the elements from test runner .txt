@@ -1,0 +1,7 @@
+There is an option in Test runner to help us locate elements.
+
+Locate option will provide us the CSS selector of an particular element.
+
+to get auto suggestions add this line on top of your script. /// <reference types="Cypress"/>
+
+to click a text box use "get" command , to put in values use "type"

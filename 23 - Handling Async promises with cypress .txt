@@ -1,0 +1,10 @@
+Instead of using same element multiple time, in order to centralize an element, AS has to be used.
+
+Cy.get('.products').As('Product')
+cy.get('@product).
+
+Diff between console.log and cy.log -
+
+Console.log is belong to Javascript and output will be printed in terminal(Developer tools) as soon as executed. To keep cypress wait for the sequence, .then() to be used to handle the promise.
+
+Cy.log is belong to cypress and prints as soon as it reaches the step.

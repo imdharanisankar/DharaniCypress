@@ -1,0 +1,9 @@
+when find is given follwed by get method, Find command will pull the child DOM elements from the chosen parent one.
+
+Find method will return numeric value (No of instances or elements with the same CSS selectors)
+
+eq method is similiar to index.
+
+contains method takes input as text and it searches for that text in the DOM
+
+click method is to click the button

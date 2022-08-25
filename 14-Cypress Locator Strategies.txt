@@ -1,0 +1,28 @@
+Locator is to identify an element.
+
+Cypress supports only CSS selectors
+
+If an element contains ID, just add # before it to covert them into CSS Selector
+
+For ex: if ID is name, then CSS selector is #name.
+
+if multiple elements contains same name, then tagname to be used to unqiuely identify the element. tagname#id. i.e input#name
+
+If an element contains class, just . before it to covert them into CSS Selector
+
+For ex: if class is search-keyword, then CSS selector is .search-keyword. 
+
+if there are any spaces in the class name it has to be replaced with dot (.). if class name is search key word, then css selector should be .search.key.word
+
+if there are multiple classes with the same name, use tagname to make them unique - tagname.classname
+
+if there are other multiple attributes, still those can be converted to css selectors, syntax is tagname[attribute=value] note: tagname is always optional i.e input[type="search"]
+
+
+Traversing through parent to child:
+
+have to use space in place of "/" to identify an element from parent to child.
+
+i.e form input[type="search"]
+
+**Chropath is an extension plugin helps us to generate or create CSS selector for each element when you hover.

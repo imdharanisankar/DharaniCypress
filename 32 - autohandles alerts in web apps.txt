@@ -1,0 +1,41 @@
+Cypress automatically accepts Popup's and alerts.
+
+Cypress will only focus on parent window.
+
+2 types of popup , one is with Ok and another is with chose either ok or cancel. in the second case, cypress will automatically select ok.
+
+alerts handled automatically by cypress will be present in the logs with the exact alert message.
+
+Cypress is capable of listening/firing to browser events. Window alert is what pushing the alerts from the browser.
+
+On() is method to trigger events from cypress. ON method takes two arg , one is event name and another one is to store the value of the event as a string.
+
+To compare strings on cypress using mocha framework, expect(str).to.equal('str')
+
+
+/// <reference types = "Cypress"/>
+
+describe("Handing different cases", function(){
+
+    it("hAlertHanding", function(){
+        cy.visit("https://rahulshettyacademy.com/AutomationPractice/")
+
+        //cypress will handle alerts automatically
+    cy.get(':nth-child(3)>fieldset>#alertbtn')
+        .click()
+
+    cy.get(':nth-child(3)>fieldset>#confirmbtn').click()
+
+    //Windows:alert
+
+    cy.on('window:alert',(str)=>{
+        expect(str).to.equal('Hello , share this practice page and share your knowledge')
+    })
+    //windows:confirm
+    cy.on('window:confirm',(str)=>{
+        expect(str).to.equal('Hello , Are you sure you want to confirm?')
+    })
+
+       
+    })
+})

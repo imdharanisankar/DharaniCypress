@@ -1,0 +1,36 @@
+Scan entire table, find the respective row and then grab details to do further validation.
+
+because values on the rows are dynamic.
+
+Next() method is to move sibilings in DOM. Next method is to imeediately follow sibilings in DOM.
+
+Next() method has to be used next to cy.get command.
+
+Index will be updated every iteration.
+
+/// <reference types = "Cypress"/>
+
+
+
+describe("Handing childtabs cases", function(){
+
+    it("Webtable", function(){
+
+        //Web Tables
+        cy.visit("https://rahulshettyacademy.com/AutomationPractice/")
+        cy.get('fieldset>#product>tbody>tr>td:nth-child(2)').each(($el, index, $list) => {
+            const text = $el.text()
+
+            if(text.includes("Master Selenium Automation in simple Python Language")){
+                cy.get('fieldset>#product>tbody>tr>td:nth-child(2)').eq(index).next().then(function(price){
+                   const pricetag = price.text()
+                expect(pricetag).to.equal('25')
+
+                })
+            }
+        })
+        
+
+    })
+})
+

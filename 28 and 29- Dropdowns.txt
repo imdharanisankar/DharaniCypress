@@ -1,0 +1,35 @@
+Selecting options from static dropdown
+selecting options from dynamic dropdown - dynamic options will appear based on the suggestion provided in the field.
+
+select is the tag name for dropdown in html.
+
+select is the function to chose the option from dropdown.
+
+Either value attribute can be used to chose the value from dropdown or value of option attribute.
+
+
+        //To select the value from dropdown
+        // to check if the second option is selected.
+        cy.get(':nth-child(3)>fieldset>select').select('option2').should('have.value', 'option2')
+       
+    })
+
+Dynamic Dropdowns:
+
+Each method will automatically resolve promise.
+
+it("handing dynamic dropdowns", function(){
+        cy.visit("https://rahulshettyacademy.com/AutomationPractice/")
+
+        //To select the value from dropdown
+        // to check if the second option is selected.
+        cy.get(':nth-child(3)>:nth-child(2)>fieldset>input').type('ind')
+        cy.get('.ui-menu-item>div').each(($el, index, list) =>{
+            if($el.text() === "India"){
+                cy.wrap($el).click()
+            }
+        }
+        )
+       
+    })
+

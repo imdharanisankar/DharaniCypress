@@ -1,0 +1,27 @@
+Check method helps us to check the checkbox.
+
+To make sure if the check box is checked or not, use an assertion.
+
+To check the behaviour, should('be.checked')
+
+Should('be.checked')
+
+concatanation of assertion, and can be used if should has to be used consecutively.
+
+to check all checkboxes at a time, find common attribute of all three.
+
+     // to check if the first option is selected.
+        cy.get(':nth-child(4)>fieldset>:nth-child(2)>input').check().should('be.checked').and('have.value','option1')
+        // To uncheck
+        cy.get(':nth-child(4)>fieldset>:nth-child(2)>input').uncheck().should('not.be.checked')
+        //To check all the checkboxes available in the page.
+        cy.get('input[type="checkbox"]').check()
+        cy.get('input[type="checkbox"]').uncheck()
+        //TO check only one checkbox, check function will take value as an argument
+        cy.get('input[type="checkbox"]').check(['option2'])
+        cy.get('input[type="checkbox"]').uncheck()
+        //TO check one or two checkbox, check function will take value as an argument
+        cy.get('input[type="checkbox"]').check(['option2', 'option1'])
+        cy.get('input[type="checkbox"]').uncheck()
+    })
+

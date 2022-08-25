@@ -1,0 +1,26 @@
+Cypress dont have knowledge on child tabs.
+
+When you set target attribute in the HTML DOM, the page will get opened in the other window.
+
+target = _blank means, link provided  under href attribute will get opened in the new tab.
+
+In order to open the page in same window, cypress has to manipulate the DOM.
+
+assert if target tag is present in the label, if yes then find a way to open it in the same page. With the help of cypress, target attribute has to be removed from the tag.
+
+invoke function is used with Jquery function. In Jquery, there is a function called removeattr() which we help us to remove the target attribute.
+
+invoke('removeattr', 'attributename')
+
+/// <reference types = "Cypress"/>
+
+describe("Handing childtabs cases", function(){
+
+    it("hAlertHanding", function(){
+
+        //removeAttr is a function to remove attribute from DOM
+        cy.visit("https://rahulshettyacademy.com/AutomationPractice/")
+        cy.get('#opentab').invoke('removeAttr', 'target').click()
+
+    })
+})

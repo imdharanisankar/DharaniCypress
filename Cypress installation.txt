@@ -1,0 +1,45 @@
+1. Download Node.js from official website and install
+2. Install Visual Studio code from software center or from internet
+3. Go to terminal section of Visual studio code and create directory for cypress automation using mkdir unix command (mkdir cypressAutomation)
+4. Now create package.json file on cypressAutomation folder ( to create package.json file - run <npm -i init> command on terminal
+5. Now install cypress from terminal using npm install or to save cypress version information on .json file use npm install --save-dev
+
+cy is a global command which will help us to retrive all cypress related in-built commands
+
+To open cypress:
+
+node_modules/.bin/cypress open
+
+SpecPattern has to be added in the config file to run the test case
+
+const { defineConfig } = require("cypress");
+
+module.exports = defineConfig({
+  e2e: {
+    setupNodeEvents(on, config) {
+      // implement node event listeners here
+    },
+    specPattern: 'cypress/Integration/Examples/*.js'
+  },
+});
+
+HOw to run from Different browsers:
+
+From Test runner there are two ways to run test cases from different browsers.
+
+	1. As soon as we run cypress, user will get an option to chose the browser where user want the test to be executed
+	2. From the actual test runner which was already opened with any browser, on the top right handside there is an option to swap the browser to get the same test cases executed on the different browsers
+
+How to run the test cases from command line aka terminals:
+
+To run the test cases directly from command line - node_modules/.bin/cypress run --spec "testcasename.js"
+
+To run the test cases from command line with headed( Live browser)
+
+node_modules/.bin/cypress run --headed
+
+To run the test cases from command line with headless( Execution happen at the backend)
+
+node_modules/.bin/cypress run (Default browser would be electron, it would run headless fashion)
+
+To chose specify browser: node_modules/.bin/cypress run --browser chrome

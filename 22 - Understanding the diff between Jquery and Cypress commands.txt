@@ -1,0 +1,5 @@
+cy.log() method is used to print output in the console
+
+storing a value in variable is not part of cypress, it is part of Jscript. so it has to be resolved manually with then method.
+
+text() method is not a cypress command. Cypress also supports Jquery method, text() is JQuery methods. Other than cypress commands are used, then it has to be resolved

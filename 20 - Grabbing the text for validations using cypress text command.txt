@@ -1,0 +1,7 @@
+Text method is to return the  text value from the element.
+
+each method is to loop an array or list of elements.
+
+wrap method is to solve the element (in case element is being looped, it has to be solved in order to use find method)
+
+includes is to find a specific char from a string. for instance, if hello needs to be searched from "Hello world"

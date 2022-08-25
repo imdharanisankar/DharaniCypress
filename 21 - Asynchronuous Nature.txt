@@ -1,0 +1,12 @@
+Javascript is Asynchronous.
+
+Asynchronous - All the steps will hit subsequenctly, will not wait for previous step to complete. cannot give guarentee on sequence of execution.
+
+Cypress team have written an engine to execute steps in sequential order.
+
+Cypress will queue all the steps and make sure it is being run one by one(in order).
+
+Promise - Test execution is still in progress. 3 types of promises - Rejecting, Pending and resolved
+
+to check if promise is resolved or not .then(). Internally cypress take care of promise for each and every step, so explicity it wont be included in the script,
+
